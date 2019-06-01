@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: SPRING-CLOUD-FEIGN
+  zipkin:
+    # zipkin 监控地址
+    base-url: http://spring-cloud-zipkin:8084
+  boot:
+    admin:
+      client:
+        # spring-clouda-dmin 监控地址
+        url: http://spring-cloud-admin:8087
+server:
+  port: 8083
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://spring-cloud-eureka:8081/eureka/
+
+#解决使用feign访问服务提供者时找不到提供者的问题
+ribbon:
+  eureka:
+    enabled: true
+
+#开启feign 支持熔断器
+feign:
+  hystrix:
+    enabled: true

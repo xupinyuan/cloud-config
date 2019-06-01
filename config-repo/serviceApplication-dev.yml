@@ -1,0 +1,22 @@
+#spring.application.name 服务名称
+spring:
+  application:
+    name: SPRING-CLOUD-SERVICE
+  zipkin:
+    # zipkin 监控地址
+    base-url: http://spring-cloud-zipkin:8084
+  boot:
+    admin:
+      client:
+        # spring-cloud-admin 监控地址
+        url: http://spring-cloud-admin:8087
+
+#server.port 端口
+server:
+  port: 8082
+# eureka.client.serviceUrl.defaultZone eureka网关注册地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://spring-cloud-eureka:8081/eureka/
+
